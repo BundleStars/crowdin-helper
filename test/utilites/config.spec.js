@@ -41,7 +41,10 @@ describe('config', () => {
       "languagesToAutoTranslate": ["nl", "fi"],
       "daysSinceLastUpdatedToDeleteBranchSafely": 3,
       "minutesSinceLastMasterMergeToPurgeSafely": 20,
-      "disableAutoTranslation": false
+      "disableAutoTranslation": false,
+      "disableUploadBeforeDownload": false,
+      "pretranslateMethod": "tm",
+      "pretranslateEngine": ""
     });
   });
 

@@ -38,7 +38,10 @@ Add crowdin-helper.json to the root of your project. Here is an example:
   "languagesToAutoTranslate": ["nl", "fi"],
   "daysSinceLastUpdatedToDeleteBranchSafely": 3,
   "minutesSinceLastMasterMergeToPurgeSafely": 20,
-  "disableAutoTranslation": false
+  "disableAutoTranslation": false,
+  "disableUploadBeforeDownload": false,
+  "pretranslateMethod": "tm",
+  "pretranslateEngine": null
 }
 ```
 
