@@ -48,6 +48,18 @@ describe('CrowdinApi', () => {
     expect(secondFetchArgumentBody._streams[9]).toMatch('name="languages[]"');
     expect(secondFetchArgumentBody._streams[10]).toBe('fi');
   });
+  
+  test('crowdinFetch.preTranslateMachine converts input array to set of pairs in FormData, calls node-fetch, gets JSON', async () => {
+    const response = await CrowdinApi.preTranslateMachine(['my-branch/sample-path/en.json']);
+    const secondFetchArgumentBody = fetch.mock.calls[0][1].body;
+
+    expect(fetch.mock.calls[0][0]).toEqual('https://api.crowdin.com/api/project/my-project-name/pre-translate');
+    expect(response).toEqual(sampleResponse);
+    expect(secondFetchArgumentBody._streams[6]).toMatch('name="languages[]"');
+    expect(secondFetchArgumentBody._streams[7]).toBe('nl');
+    expect(secondFetchArgumentBody._streams[9]).toMatch('name="languages[]"');
+    expect(secondFetchArgumentBody._streams[10]).toBe('fi');
+  });
 
   test('CrowdinApi.addBranch calls node-fetch and gets sample JSON response', async () => {
     const response = await CrowdinApi.addBranch('sample-feature-branch-name');
