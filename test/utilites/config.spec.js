@@ -43,8 +43,8 @@ describe('config', () => {
       "minutesSinceLastMasterMergeToPurgeSafely": 20,
       "disableAutoTranslation": false,
       "disableUploadBeforeDownload": false,
-      "pretranslateMethod": "tm",
-      "pretranslateEngine": ""
+      "pretranslateMachineEngine": "",
+      "branchOverrides": []
     });
   });
 
